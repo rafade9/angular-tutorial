@@ -18,13 +18,13 @@ export class ThirdHomeworkComponent implements OnInit {
   }
 
   onDetailsClick(){
-    this.logs.push({'id' : this.logs.length + 1})
+    this.logs.push(Math.random());
     this.niceApp = !this.niceApp;
   }
 
-  getLogColor(log){
-    if(log.id > 4)
-      return 'blue';
+  getLogColor(index){
+    if(index > 4)
+      return 'green';
   }
 
 }

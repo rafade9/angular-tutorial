@@ -5,6 +5,6 @@
 <br><br>
 <p *ngIf="niceApp">This app is nice</p>
 <br>
-<div *ngFor="let log of logs">
-  <p [ngStyle]="{backgroundColor:getLogColor(log)}">{{log.id}}</p>
+<div *ngFor="let log of logs; let i = index">
+  <p [ngStyle]="{backgroundColor:getLogColor(i)}">{{log}}</p>
 </div>
