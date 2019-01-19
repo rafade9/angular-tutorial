@@ -1,8 +1,21 @@
-<button 
-class="btn btn-primary" 
-[disabled]="!allowNewServer">Add Server</button>
-<p>
-    {{allowNewServer}}
-</p>
+<label>Server Name </label>
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<p>{{serverName}}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<p>{{serverCreationStatus}}</p>
 <app-server></app-server>
 <app-server></app-server>
+<br><br>
+
+<!--2nd homework -->
+<label>Username</label>
+<div class="form-group">
+  <label for="username"></label>
+  <input type="text" class="form-control" id="username" [(ngModel)]="username">
+  <p class="help-block">Your username is {{username}}</p>
+</div>
+<button type="button" class="btn btn-default" (click)="resetUsername()" [disabled]="!username">
+  Reset
+</button>
+<!--2nd homework end -->
