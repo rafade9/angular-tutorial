@@ -3,19 +3,13 @@
 <input type="text" class="form-control" [(ngModel)]="serverName">
 <p>{{serverName}}</p>
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-<p>{{serverCreationStatus}}</p>
-<app-server></app-server>
-<app-server></app-server>
-<br><br>
+<!-- <p>{{serverCreationStatus}}</p> -->
+<!-- <p *ngIf="serverCreated; else noServer">Server was created, its name is {{serverName}}.</p> -->
+<!-- <ng-template #noServer><p>No server was created</p></ng-template> -->
+<p *ngIf="serverCreated">Server was created, its name is {{serverName}}.</p>
+<app-server *ngFor="let server of servers"></app-server>
 
-<!--2nd homework -->
-<label>Username</label>
-<div class="form-group">
-  <label for="username"></label>
-  <input type="text" class="form-control" id="username" [(ngModel)]="username">
-  <p class="help-block">Your username is {{username}}</p>
-</div>
-<button type="button" class="btn btn-default" (click)="resetUsername()" [disabled]="!username">
-  Reset
-</button>
-<!--2nd homework end -->
+<br><br>
+<app-second-homework></app-second-homework>
+<br><br>
+<app-third-homework></app-third-homework>
